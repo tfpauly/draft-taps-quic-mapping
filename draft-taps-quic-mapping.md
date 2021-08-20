@@ -34,13 +34,44 @@ TODO Abstract
 
 # Introduction
 
-TODO Introduction
-
+This document defines a Transport Services mapping, as defined in {{!I-D.ietf-taps-impl}} for
+the QUIC protocol {{!RFC9000}}.
 
 # Conventions and Definitions
 
 {::boilerplate bcp14-tagged}
 
+# Mapping
+
+Connectedness: Multiplexing Connected
+
+Data Unit: Byte-stream
+
+Connection Object:
+
+Initiate:
+
+InitiateWithSend: 
+
+Ready: 
+
+InitiateError:
+
+ConnectionError:
+
+Listen:
+
+ConnectionReceived:
+
+Clone:
+
+Send:
+
+Receive:
+
+Close:
+
+Abort:
 
 # Security Considerations
 
