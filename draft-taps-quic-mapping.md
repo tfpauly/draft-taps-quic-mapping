@@ -55,7 +55,7 @@ Connection Object:
 : A Connection object in the Transport Services API maps to a single QUIC stream between two hosts. This stream can be bidirectional or unidirectional.
 
 Initiate:
-: Calling `Initiate` on a QUIC stream Connection causes the implementation to prepare a new QUIC stream to the Remote Endpoint. If there is already a QUIC connection to the Remote Endpoint, `Initiate` simply prepares a new stream by allocating a stream ID. If there is not already a QUIC connection established, the implementation will establish a connection first.
+: Calling `Initiate` on a QUIC stream Connection causes the implementation to prepare a new QUIC stream to the Remote Endpoint. If there is already a QUIC connection to the Remote Endpoint, `Initiate` simply prepares a new stream by allocating a stream ID. If the Selection Property `activeReadBeforeSend` (see {{Section 6.2.18 of I-D.ietf-taps-impl}}) is Preferred or Required, the new stream must be created by sending a QUIC STREAM frame with no data. From {{Section 2.4 of RFC9000}}, it is not certain that a QUIC implementation will offer this ability in its API, and if it this functionality is not available, such a call to `Initiate` (or `InitiateWithSend`, described below) results in an `InititateError`. If there is not already a QUIC connection established, the implementation will establish a connection first.
 
 InitiateWithSend:
 : Early data sent in `InitiateWithSend` will be used for 0-RTT QUIC connection establishment, if the QUIC connection to the Remote Endpoint is not already established and the local device has previously negotiated support for 0-RTT establishment with the Remote Endpoint.
