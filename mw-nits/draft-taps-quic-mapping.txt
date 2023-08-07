@@ -129,7 +129,7 @@ Table of Contents
       RESET_STREAM frame is received.
 
    Listen:  Calling Listen for QUIC binds to a local UDP port and
-      prepare to receive inbound QUIC connections and streams.
+      prepares to receive inbound QUIC connections and streams.
 
    ConnectionReceived:  QUIC listeners will deliver each inbound QUIC
       stream as a Connection object.  The relationship of inbound
