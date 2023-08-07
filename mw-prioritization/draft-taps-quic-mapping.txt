@@ -165,7 +165,7 @@ Table of Contents
 
    In addition to the API mappings described above, when there are
    multiple Connection objects assigned to the same QUIC connection,
-   this mapping can support the connPriority Connection property.
+   this mapping supports the connPriority Connection property.
 
 4.  Security Considerations
 
