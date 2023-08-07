@@ -96,7 +96,7 @@ CloseGroup:
 AbortGroup:
 : Calling `AbortGroup` on any QUIC stream in a Connection Group indicates that the shared QUIC connection should be closed immediately using a CONNECTION_CLOSE frame.
 
-In addition to the API mappings described above, when there are multiple Connection objects assigned to the same QUIC connection, this mapping can support the `connPriority` Connection property.
+In addition to the API mappings described above, when there are multiple Connection objects assigned to the same QUIC connection, this mapping supports the `connPriority` Connection property.
 
 # Security Considerations
 
