@@ -4,8 +4,8 @@
 
 TAPS Working Group                                              T. Pauly
 Internet-Draft                                                     Apple
-Intended status: Standards Track                           19 March 2022
-Expires: 20 September 2022
+Intended status: Standards Track                           7 August 2023
+Expires: 8 February 2024
 
 
                  A Transport Services Mapping for QUIC
@@ -42,11 +42,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 20 September 2022.
+   This Internet-Draft will expire on 8 February 2024.
 
 Copyright Notice
 
-   Copyright (c) 2022 IETF Trust and the persons identified as the
+   Copyright (c) 2023 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -180,20 +180,20 @@ Table of Contents
 6.  Normative References
 
    [I-D.ietf-taps-impl]
-              Brunstrom, A., Pauly, T., Enghardt, T., Tiesel, P. S., and
+              Brunstrom, A., Pauly, T., Enghardt, R., Tiesel, P. S., and
               M. Welzl, "Implementing Interfaces to Transport Services",
-              Work in Progress, Internet-Draft, draft-ietf-taps-impl-12,
-              7 March 2022, <https://datatracker.ietf.org/doc/html/
-              draft-ietf-taps-impl-12>.
+              Work in Progress, Internet-Draft, draft-ietf-taps-impl-16,
+              5 June 2023, <https://datatracker.ietf.org/doc/html/draft-
+              ietf-taps-impl-16>.
 
    [I-D.ietf-taps-interface]
-              Trammell, B., Welzl, M., Enghardt, T., Fairhurst, G.,
-              Kuehlewind, M., Perkins, C., Tiesel, P. S., and T. Pauly,
+              Trammell, B., Welzl, M., Enghardt, R., Fairhurst, G.,
+              Kühlewind, M., Perkins, C., Tiesel, P. S., and T. Pauly,
               "An Abstract Application Layer Interface to Transport
               Services", Work in Progress, Internet-Draft, draft-ietf-
-              taps-interface-15, 7 March 2022,
+              taps-interface-22, 6 July 2023,
               <https://datatracker.ietf.org/doc/html/draft-ietf-taps-
-              interface-15>.
+              interface-22>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
