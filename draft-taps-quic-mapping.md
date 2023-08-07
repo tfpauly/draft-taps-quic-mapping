@@ -58,7 +58,7 @@ Initiate:
 : Calling `Initiate` on a QUIC stream Connection causes the implementation to prepare a new QUIC stream to the Remote Endpoint. If there is already a QUIC connection to the Remote Endpoint, `Initiate` simply prepares a new stream by allocating a stream ID. If there is not already a QUIC connection established, the implementation will establish a connection first.
 
 InitiateWithSend:
-: Early data sent in `InitiateWithSend` will be used for 0-RTT QUIC connection establishment, if the QUIC connection to the Remote Endpoint is not already established and the local device has previously negotiated support for 0-RTT establishment with the Remote Endpoint.
+: Early data sent in `InitiateWithSend` will be used for 0-RTT QUIC connection establishment, if the QUIC connection to the Remote Endpoint is not already established and the local device has previously negotiated support for 0-RTT establishment with the Remote Endpoint. If there is already a QUIC connection to the Remote Endpoint, `InitiateWithSend` prepares a new stream by allocating a stream ID and sends the data on that new stream.
 
 Ready:
 : A QUIC stream Connection is ready once the underlying QUIC connection is established, and once a stream ID can be allocated. This may be delayed if stream creation is blocked due to reaching the maximum streams limit.
