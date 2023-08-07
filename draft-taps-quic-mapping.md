@@ -20,6 +20,9 @@ author:
     organization: Apple
     email: tpauly@apple.com
 
+normative:
+  I-D.ietf-taps-impl:
+  I-D.ietf-taps-interface:
 
 --- abstract
 
