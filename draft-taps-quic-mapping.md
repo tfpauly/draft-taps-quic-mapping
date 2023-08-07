@@ -52,10 +52,10 @@ Connectedness: Multiplexing Connected
 Data Unit: Byte-stream
 
 Connection Object:
-: A Connection object in the Transport Services API maps to a single QUIC stream between two hosts. This stream can be bidirectional or unidirectional.
+: A Connection object in the Transport Services API maps to a single QUIC stream between two hosts. This stream can be bidirectional or unidirectional, depending on the Selection Property `direction` (see {{Section of 6.2.16 of I-D.ietf-taps-interface}}).
 
 Initiate:
-: Calling `Initiate` on a QUIC stream Connection causes the implementation to prepare a new QUIC stream to the Remote Endpoint. If there is already a QUIC connection to the Remote Endpoint, `Initiate` simply prepares a new stream by allocating a stream ID. If there is not already a QUIC connection established, the implementation will establish a connection first.
+: Calling `Initiate` on a QUIC stream Connection causes the implementation to prepare a new QUIC stream to the Remote Endpoint. If there is already a QUIC connection to the Remote Endpoint, `Initiate` simply prepares a new stream by allocating a stream ID. If there is not already a QUIC connection established, the implementation will establish a connection first. Since QUIC does not support the active creation of unidirectional streams with the initiator as the receiver, if the Selection Property `direction` is set to `Unidirectional receive`, calling `Initiate` (or `InitiateWithSend`, described below) will result in an `InitiateError`.
 
 InitiateWithSend:
 : Early data sent in `InitiateWithSend` will be used for 0-RTT QUIC connection establishment, if the QUIC connection to the Remote Endpoint is not already established and the local device has previously negotiated support for 0-RTT establishment with the Remote Endpoint.
