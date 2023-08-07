@@ -70,7 +70,7 @@ ConnectionError:
 : Once created, a QUIC stream Connection throws an error whenever the stream is disconnected, such as when a RESET_STREAM frame is received.
 
 Listen:
-: Calling `Listen` for QUIC binds to a local UDP port and prepare to receive inbound QUIC connections and streams.
+: Calling `Listen` for QUIC binds to a local UDP port and prepares to receive inbound QUIC connections and streams.
 
 ConnectionReceived:
 : QUIC listeners will deliver each inbound QUIC stream as a Connection object. The relationship of inbound streams to other streams in a single QUIC connection can be detected by checking `Connection.GroupedConnections()`.
