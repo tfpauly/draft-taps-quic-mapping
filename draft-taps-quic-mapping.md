@@ -29,7 +29,7 @@ This document defines a Transport Services API mapping for QUIC streams.
 
 # Introduction
 
-This document defines a Transport Services mapping, as defined in {{!I-D.ietf-taps-impl}} for
+This document defines a Transport Services mapping, in accordance with {{Appendix A of I-D.ietf-taps-impl}}, for
 the QUIC protocol {{!RFC9000}}. This mapping, presented in {{mapping}}, allows QUIC to be used
 with the calls defined in the Transport Services API {{!I-D.ietf-taps-interface}}.
 
@@ -52,7 +52,7 @@ Connection Object:
 : A Connection object in the Transport Services API maps to a single QUIC stream between two hosts. This stream can be bidirectional or unidirectional.
 
 Initiate: 
-: Calling `Initiate` on a QUIC stream Connection causes the implementation to prepare a new QUIC stream to the Remote Endpoint. If there is already a QUIC connection to the Remote Endpoint, `Initiate` simply prepares a new stream by allocating a stream ID. If there is not already a QUIC connection established, the implementation will establish a connection first.
+: Calling `Initiate` on a QUIC stream Connection causes the implementation to prepare a new QUIC stream to the Remote Endpoint. If there is already a QUIC connection to the Remote Endpoint, `Initiate` simply prepares a new stream by allocating a stream ID. If there is not already a QUIC connection established, the implementation will establish a QUIC connection first.
 
 InitiateWithSend: 
 : Early data sent in `InitiateWithSend` will be used for 0-RTT QUIC connection establishment, if the QUIC connection to the Remote Endpoint is not already established and the local device has previously negotiated support for 0-RTT establishment with the Remote Endpoint.
@@ -64,7 +64,7 @@ InitiateError:
 : QUIC can throw various errors during connection setup (handshake failure, timeouts, etc). Errors for Initiate will represent QUIC connection-level errors. Once a QUIC connection is established, allocation of a QUIC stream ID may be delayed, but will not generate an error.
 
 ConnectionError: 
-: Once created, a QUIC stream Connection throws an error whenever the stream is disconnected, such as when a RESET_STREAM frame is receieved.
+: Once created, a QUIC stream Connection throws an error whenever the stream is disconnected, such as when a RESET_STREAM frame is received.
 
 Listen: 
 : Calling `Listen` for QUIC binds to a local UDP port and prepare to receive inbound QUIC connections and streams.
@@ -79,13 +79,13 @@ Send:
 : Sending data will generate a STREAM frame using the stream ID assigned to the Connection object.
 
 Receive: 
-: Calling `Receive` will indicate that the caller is ready to receive data from this stream, which is sent by the peer in STREAM frames using the stream ID assigned to the Connection object. Data is delivered in either the `Recieved` or `RecievedPartial` event.
+: Calling `Receive` will indicate that the caller is ready to receive data from this stream, which is sent by the peer in STREAM frames using the stream ID assigned to the Connection object. Data is delivered in either the `Received` or `ReceivedPartial` event.
 
 Close: 
-: Calling `Close` on a QUIC stream Connection indicates that the stream should gracefully closed by setting the FIN bit on the stream. 
+: Calling `Close` on a QUIC stream Connection indicates that the stream should be gracefully closed by setting the FIN bit on the stream.
 
 Abort: 
-: Calling `Close` on a QUIC stream Connection indicates that the stream should closed immediately, by sending a RESET_STREAM frame. 
+: Calling `Close` on a QUIC stream Connection indicates that the stream should be closed immediately, by sending a RESET_STREAM frame.
 
 CloseGroup: 
 : Calling `CloseGroup` on any QUIC stream in a Connection Group indicates that the shared QUIC connection should be closed using a CONNECTION_CLOSE frame once all open streams have completed.
